@@ -4,12 +4,10 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController extends AbstractController
+class ErrorController extends AbstractController
 {
     public function view()
     {
-        return $this->render('home.html.twig', [
-            'from' => 'twig'
-        ]);
+        return $this->render('error/404.html.twig');
     }
 }

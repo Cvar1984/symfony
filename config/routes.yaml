@@ -1,4 +1,4 @@
-index:
+homepage:
     path: /
-    controller: App\Controller\HomeController::index
+    controller: App\Controller\HomeController::view
     methods: GET
