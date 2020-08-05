@@ -8,6 +8,6 @@ class ErrorController extends AbstractController
 {
     public function view()
     {
-        return $this->render('error/404.html.twig');
+        return $this->render('base/error/404.html.twig');
     }
 }
