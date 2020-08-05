@@ -6,8 +6,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             {% block stylesheet %}
-                <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+                {{ encore_entry_link_tags('app') }}
             {% endblock %}
             <title>{% block title %}Welcome{% endblock %}</title>
             {% block navbar %}{% endblock %}
@@ -16,12 +15,8 @@
     <body>
         {% block body %}{% endblock %}
             {% block footer %}{% endblock %}
-                <!-- Optional JavaScript -->
-                <!-- Popper.js first, then Bootstrap JS -->
-                <!-- Jquery, popper, bootstrap -->
                 {% block javascript %}
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+                    {{ encore_entry_script_tags('app') }}
                 {% endblock %}
     </body>
 </html>
