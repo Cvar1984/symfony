@@ -1,3 +1,5 @@
+# general
+/.php_cs.cache
 
 ###> symfony/framework-bundle ###
 /.env.local
