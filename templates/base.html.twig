@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         {% block head %}
@@ -10,13 +10,16 @@
             {% endblock %}
             <title>{% block title %}Welcome{% endblock %}</title>
             {% block navbar %}{% endblock %}
-            {% endblock %}
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}{% endblock %}
+            {% block content %}{% endblock %}
             {% block footer %}{% endblock %}
-                {% block javascript %}
-                    {{ encore_entry_script_tags('app') }}
-                {% endblock %}
+            {% block javascript %}
+                {{ encore_entry_script_tags('app') }}
+            {% endblock %}
+        {% endblock %}
     </body>
 </html>
