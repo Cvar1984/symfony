@@ -1,0 +1,7 @@
+.bg-aesthetic-gradient {
+    background: rgb(255,185,216);
+    background: -moz-linear-gradient(90deg, rgba(255,185,216,1) 0%, rgba(61,252,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,185,216,1) 0%, rgba(61,252,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,185,216,1) 0%, rgba(61,252,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffb9d8",endColorstr="#3dfcff",GradientType=1);
+}

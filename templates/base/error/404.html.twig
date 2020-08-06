@@ -6,3 +6,11 @@
     {% set tagline_btn_content = 'Back to home' %}
     {{ parent() }}
 {% endblock %}
+{% block content %}
+    <div class="text-center mb-5">
+        <img
+            src="{{ asset('images/images.jpg') }}"
+            class="img-thumbnail"
+            >
+    </div>
+{% endblock %}
