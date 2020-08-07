@@ -4,6 +4,6 @@ homepage:
     methods: GET
 
 product:
-    path: /product{id}
+    path: /product/{id}
     controller: App\Controller\ProductController::view
     defaults: { id: 1 }
