@@ -6,7 +6,8 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             {% block stylesheet %}
-                {{ encore_entry_link_tags('app') }}
+                {{ encore_entry_link_tags('bootstrap') }}
+                {{ encore_entry_link_tags('custom') }}
             {% endblock %}
             <title>{% block title %}Welcome{% endblock %}</title>
             {% block navbar %}{% endblock %}
@@ -18,7 +19,8 @@
             {% block content %}{% endblock %}
             {% block footer %}{% endblock %}
             {% block javascript %}
-                {{ encore_entry_script_tags('app') }}
+                {{ encore_entry_script_tags('bootstrap') }}
+                {{ encore_entry_script_tags('custom') }}
             {% endblock %}
         {% endblock %}
     </body>
