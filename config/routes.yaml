@@ -1,9 +1,9 @@
 homepage:
-    path: /
-    controller: App\Controller\HomeController::view
-    methods: GET
+  path: /
+  controller: App\Controller\HomeController::view
+  methods: GET
 
 product:
-    path: /product/{id}
-    controller: App\Controller\ProductController::view
-    defaults: { id: 1 }
+  path: /product/{id}
+  controller: App\Controller\ProductController::view
+  defaults: { id: 1 }

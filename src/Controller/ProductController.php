@@ -5,7 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Product;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-/* use Doctrine\ORM\EntityManagerInterface; */
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException;
 
 /**
  * Class: ProductController
@@ -18,17 +20,20 @@ class ProductController extends AbstractController
      * createProduct
      *
      */
-    public function createProduct(ValidatorInterface $validator)
+    public function createProduct(
+        ValidatorInterface $validator,
+        EntityManagerInterface $entityManager
+    )
     {
-        $entityManager = $this->getDoctrine()->getManager();
 
         $product = new Product();
         $product->setName('keyboard');
-        $product->setPrice(29000);
-        $product->setDescription('Keyboard RGB');
+        $product->setPrice(49000);
+        $product->setDescription('Elegant keyboard');
+        $product->setColor('white');
 
-        if($error = $validator->validate($product)) {
-            $this->createException($error);
+        if (!$error = $validator->validate($product)) {
+            throw new ServiceUnavailableHttpException($error);
         }
 
         $entityManager->persist($product);
@@ -39,17 +44,21 @@ class ProductController extends AbstractController
      * view
      *
      */
-    public function view($id)
+    public function view(
+        ValidatorInterface $validator,
+        EntityManagerInterface $entityManager,
+        $id
+    )
     {
-        /* $product = $this->createProduct(); */
-        $entityManager = $this->getDoctrine()->getRepository(Product::class);
+        // $product = $this->createProduct($validator, $entityManager);
+        $productRepository = $entityManager->getRepository(Product::class);
 
-        $product = $entityManager->findOneBy(['id' => $id]);
-        $allProduct = $entityManager->findAll();
-        var_dump($allProduct);
+        $product = $productRepository->findOneBy(['id' => $id]);
+        // $allProduct = $productRepository->findAll();
+        // var_dump($allProduct);
 
-        if(!$product) {
-            $this->createNotFoundException('No product found for' . $id);
+        if (!$product) {
+            throw new NotFoundHttpException('No product found for ' . $id);
         }
 
         return $this->render('product/index.html.twig', [
@@ -57,6 +66,7 @@ class ProductController extends AbstractController
             'product_id' => $product->getId(),
             'product_name' => $product->getName(),
             'product_description' => $product->getDescription(),
+            'product_color' => $product->getColor(),
         ]);
     }
 }

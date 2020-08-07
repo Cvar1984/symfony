@@ -152,10 +152,14 @@ felis.' %}
     <!-- /.container -->
 {% endblock %}
 {% block footer %}
+{% if app_name is not defined %}
+    {% set app_name = 'App' %}
+{% endif %}
+
 <!-- Footer -->
 <footer class="footer mt-auto py-3 bg-dark sticky-bottom">
     <div class="container-fluid">
-        <p class="m-0 text-center text-muted">Copyright &copy; Your Website 2020</p>
+        <p class="m-0 text-center text-muted">Copyright &copy; {{ app_name }} 2020</p>
     </div>
     <!-- /.container -->
 </footer>

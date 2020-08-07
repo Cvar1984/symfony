@@ -10,5 +10,6 @@ import "../scss/bootstrap.scss";
 import "../css/bootstrap.css";
 
 require("bootstrap");
+require("popper.js");
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
