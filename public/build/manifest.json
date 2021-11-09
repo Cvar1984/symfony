@@ -1,8 +1,8 @@
 {
-  "build/0.986508ac.js": "/build/0.986508ac.js",
-  "build/bootstrap.css": "/build/bootstrap.4871d9ee.css",
-  "build/bootstrap.js": "/build/bootstrap.1e896a24.js",
-  "build/custom.css": "/build/custom.ad528c6b.css",
-  "build/custom.js": "/build/custom.3129f959.js",
-  "build/runtime.js": "/build/runtime.d94b3b43.js"
+  "build/bootstrap.css": "/build/bootstrap.css",
+  "build/bootstrap.js": "/build/bootstrap.js",
+  "build/custom.css": "/build/custom.css",
+  "build/custom.js": "/build/custom.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors~bootstrap.js": "/build/vendors~bootstrap.js"
 }
