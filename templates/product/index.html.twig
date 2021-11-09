@@ -4,18 +4,12 @@
 {% block header %}{% endblock %}
 {% block content %}
 <div class="py-5 my-5">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/data/data/com.termux/files/home/htdocs/src/Controller/ProductController.php'|file_link(0) }}">src/Controller/ProductController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/data/data/com.termux/files/home/htdocs/templates/product/index.html.twig'|file_link(0) }}">templates/product/index.html.twig</a></code></li>
-    </ul>
     <p class="lead">
         product id: {{ product_id }}<br/>
         product name: {{ product_name|capitalize }}<br/>
         product description: {{ product_description|capitalize }}<br/>
         product color: {{ product_color|capitalize }}</br>
+        product price: ${{ product_price|capitalize }}
     </p>
 </div>
 {% endblock %}

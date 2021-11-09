@@ -1,4 +1,6 @@
 {
+    "name": "cvar1984/symfony",
+    "description": "Symfony web skeleton",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",

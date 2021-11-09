@@ -22,7 +22,8 @@ services:
     bind:
       $appName: "%env(string:APP_NAME)%"
 
-  App\EventListener\ExceptionListener:
-    class: App\EventListener\ExceptionListener
-    tags:
-      - { name: kernel.event_listener, event: kernel.exception }
+  #App\EventListener\ExceptionListener:
+  # class: App\EventListener\ExceptionListener
+  # tags:
+  #   - { name: kernel.event_listener, event: kernel.exception }
+  #     
